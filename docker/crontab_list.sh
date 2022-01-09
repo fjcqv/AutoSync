@@ -106,6 +106,8 @@
 0 0,8 * * * node /scripts/jd_lzdz1_customized2.js >> /scripts/logs/jd_lzdz1_customized2.log 2>&1
 #会场红包
 0 0,12,20,23 * * * node /scripts/jd_nhs_red.js >> /scripts/logs/jd_nhs_red.log 2>&1
+#城城分现金
+0 22,0-23/5 9-21 1 * node /scripts/jd_city.js >> /scripts/logs/jd_city.log 2>&1
 ##############长期活动##############
 # 签到
 0 0,18 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
