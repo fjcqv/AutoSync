@@ -104,6 +104,8 @@
 0 0,8 * * * node /scripts/jd_lzdz1_customized.js >> /scripts/logs/jd_lzdz1_customized.log 2>&1
 #年货盛宴 春节集福攻略
 0 0,8 * * * node /scripts/jd_lzdz1_customized2.js >> /scripts/logs/jd_lzdz1_customized2.log 2>&1
+#会场红包
+0 0,12,20,23 * * * node /scripts/jd_nhs_red.js >> /scripts/logs/jd_nhs_red.log 2>&1
 ##############长期活动##############
 # 签到
 0 0,18 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
