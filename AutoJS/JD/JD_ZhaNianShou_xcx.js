@@ -2,8 +2,13 @@
   京东<集爆竹炸年兽>小程序任务
   需手动进入任务界面，注意脚本提醒
 
-  20220109 V1.3
-   by 嘉佳
+  Q：小程序脚本打开任务列表后识别不到任务
+  A：检查下自己手机有没有打开什么悬浮窗，比如autojs的悬浮球、录屏的悬浮窗之类的，关掉再试试
+
+  20220111 V1.6（与APP端版本号保持一致）
+  修复加购和累计浏览任务报错问题
+  识别任务增加任务状态代码，方便追踪问题
+
  */
 Start();
 console.info("开始任务");
@@ -87,6 +92,8 @@ function Run(){
             item = item.parent().child(4);
             let b = item.bounds()
             let color = images.pixel(img, b.left+b.width()/8, b.top+b.height()/2)
+            console.info("识别任务<"+taskText+">中……");
+            console.error("识别任务状态("+colors.red(color)+","+colors.green(color)+","+colors.blue(color)+","+colors.alpha(color)+")");
             if (colors.isSimilar(color, "#f75552",40,"diff")) {//如依然无法识别任务，可尝试继续调大第三个参数的识别范围，0~255之间，数字越大，匹配范围越大
                 //跳过任务
                 //if (taskText.match(/成功入会/)) continue
@@ -132,6 +139,8 @@ function Run(){
         }
 
         function itemTask(cart) {
+            var boundsX = 0;
+            var boundsY = 0;
             taskButton.click();
             sleep(1000);
             console.log("等待进入商品列表……");
@@ -140,10 +149,14 @@ function Run(){
             for (let i = 0; i < 4; i++) {
                 if (cart) {
                     console.log("加购并浏览");
-                    items.parent().parent().child(2).child(i).child(4).click();
+                    boundsX = items.parent().parent().child(2).child(i).child(4).bounds().centerX();
+                    boundsY = items.parent().parent().child(2).child(i).child(4).bounds().centerY();
+                    click(boundsX,boundsY);
                 } else {
                     console.log("浏览商品页");
-                    items.parent().parent().child(2).child(i).child(4).click();
+                    boundsX = items.parent().parent().child(2).child(i).child(4).bounds().centerX();
+                    boundsY = items.parent().parent().child(2).child(i).child(4).bounds().centerY();
+                    click(boundsX,boundsY);
                 }
                 sleep(1000);
                 console.log("返回");
