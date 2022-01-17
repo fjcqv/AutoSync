@@ -43,7 +43,7 @@ sleep(1000);
 //Run("京东",1,0,0);home();
 //Run("京东-2",1,0,0);home();
 //手动例子
-Run("手动",0,1,1);home();
+Run("手动",0,0,1);home();
 //分身有术缓存清理
 //CleanCache("分身有术Pro",1);
 console.info("结束任务");
@@ -123,7 +123,7 @@ function Run(LauchAPPName,IsSeparation,IsInvite,IsJoinMember) {
     sleep(2000);
     if(IsInvite == 1){
         //将京口令分段填入，只要里面的特征码即可，分不清什么是特征码的也可以整段放进来，注意用双引号和逗号隔开
-        Code=new Array("￥91yW609MICRID%","#8Bk234cWiPXav@","#5AdzgD3bFepFs%","#41U9D9iIq5GlS@","#6BKkL5Xe9ZgHq@","#35bUyDRs21QXA%");//邀请码第一个是助力作者，第二个纯属举例，使用时建议删除
+        Code=new Array("");//邀请码第一个是助力作者，第二个纯属举例，使用时建议删除
         RunTime=Code.length;
         console.info("共识别到"+RunTime+"个助力码");
         for(var i = 0; i < RunTime; i++){
