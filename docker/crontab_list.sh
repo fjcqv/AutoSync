@@ -124,6 +124,8 @@
 33 1,12 * * * node /scripts/jd_babel_sign.js >> /scripts/logs/jd_babel_sign.log 2>&1
 #京东超市年货日历
 36 2,13 * * * node /scripts/jd_year.js >> /scripts/logs/jd_year.log 2>&1
+#组队分豆-蒙牛
+18 1,16 * * * node /scripts/jd_mengniu.js >> /scripts/logs/jd_mengniu.log 2>&1
 ##############长期活动##############
 # 签到
 0 0,18 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
