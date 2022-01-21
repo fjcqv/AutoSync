@@ -126,6 +126,8 @@
 36 2,13 * * * node /scripts/jd_year.js >> /scripts/logs/jd_year.log 2>&1
 #组队分豆-蒙牛
 18 1,16 * * * node /scripts/jd_mengniu.js >> /scripts/logs/jd_mengniu.log 2>&1
+#京喜签到
+20 1,8 * * * node /scripts/jd_jx_sign.js >> /scripts/logs/jd_jx_sign.log 2>&1
 ##############长期活动##############
 # 签到
 0 0,18 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
@@ -236,6 +238,8 @@
 20 9 * * *  node /scripts/jd_joypark_open.js >> /scripts/logs/jd_joypark_open.log 2>&1
 #汪汪乐园养joy
 20 0-23/3 * * * node /scripts/jd_joypark_joy.js >> /scripts/logs/jd_joypark_joy.log 2>&1
+#汪汪乐园提现
+15 10 * * * node /scripts/jd_joy_tx.js >> /scripts/logs/jd_joy_tx.log 2>&1
 #天天赚京豆
 20 8 * * * node /scripts/jd_ttzjd.js >> /scripts/logs/jd_ttzjd.log 2>&1
 #宠汪汪验证码获取
