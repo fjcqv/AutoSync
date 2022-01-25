@@ -128,6 +128,8 @@
 18 1,16 * * * node /scripts/jd_mengniu.js >> /scripts/logs/jd_mengniu.log 2>&1
 #京喜签到
 20 1,8 * * * node /scripts/jd_jx_sign.js >> /scripts/logs/jd_jx_sign.log 2>&1
+#萌虎摇摇乐账号获奖情况
+10 22 * * * node /scripts/jd_mhyyl_prize.js >> /scripts/logs/jd_mhyyl_prize.log 2>&1
 ##############长期活动##############
 # 签到
 0 0,18 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
