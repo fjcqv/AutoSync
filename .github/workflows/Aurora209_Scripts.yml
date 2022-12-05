@@ -1,12 +1,12 @@
-name: passerby-b_JDDJ
+name: Aurora209_Scripts
 on:
   schedule:
-    - cron: ''
+    - cron: '1 */3 * * *'
   workflow_dispatch:
   watch:
     types: started
   repository_dispatch:
-    types: sync passerby-b_JDDJ
+    types: sync Aurora209_Scripts
 jobs:
   repo-sync:
     env:
@@ -18,11 +18,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync passerby-b_JDDJ
+      - name: sync Aurora209_Scripts
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/passerby-b/JDDJ.git"
+          source_repo: "https://github.com/Aurora209/Scripts.git"
           source_branch: "main"
-          destination_branch: "passerby-b_JDDJ"
+          destination_branch: "Aurora209_Scripts"
           github_token: ${{ secrets.PAT }}

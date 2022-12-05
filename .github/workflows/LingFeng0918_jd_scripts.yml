@@ -1,4 +1,4 @@
-name: passerby-b_JDDJ
+name: LingFeng0918_jd_scripts
 on:
   schedule:
     - cron: ''
@@ -6,7 +6,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: sync passerby-b_JDDJ
+    types: sync LingFeng0918_jd_scripts
 jobs:
   repo-sync:
     env:
@@ -18,11 +18,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync passerby-b_JDDJ
+      - name: sync LingFeng0918_jd_scripts
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/passerby-b/JDDJ.git"
-          source_branch: "main"
-          destination_branch: "passerby-b_JDDJ"
+          source_repo: "https://github.com/LingFeng0918/jd_scripts.git"
+          source_branch: "master"
+          destination_branch: "LingFeng0918_jd_scripts"
           github_token: ${{ secrets.PAT }}

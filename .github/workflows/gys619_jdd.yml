@@ -1,4 +1,4 @@
-name: yydspure
+name: gys619_jdd
 on:
   schedule:
     - cron: '1 */3 * * *'
@@ -6,7 +6,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: sync yydspure
+    types: sync gys619_jdd
 jobs:
   repo-sync:
     env:
@@ -18,11 +18,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync yydspure
+      - name: sync gys619_jdd
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/okyyds/yydspure.git"
-          source_branch: "master"
-          destination_branch: "yydspure"
+          source_repo: "https://github.com/gys619/jdd.git"
+          source_branch: "main"
+          destination_branch: "gys619_jdd"
           github_token: ${{ secrets.PAT }}

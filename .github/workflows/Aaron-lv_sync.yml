@@ -1,4 +1,4 @@
-name: passerby-b_JDDJ
+name: Aaron-lv_sync
 on:
   schedule:
     - cron: ''
@@ -6,7 +6,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: sync passerby-b_JDDJ
+    types: sync Aaron-lv_sync
 jobs:
   repo-sync:
     env:
@@ -18,11 +18,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync passerby-b_JDDJ
+      - name: sync Aaron-lv_sync
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/passerby-b/JDDJ.git"
-          source_branch: "main"
-          destination_branch: "passerby-b_JDDJ"
+          source_repo: "https://github.com/Aaron-lv/sync.git"
+          source_branch: "jd_scripts"
+          destination_branch: "Aaron-lv_sync"
           github_token: ${{ secrets.PAT }}

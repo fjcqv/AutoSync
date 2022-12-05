@@ -1,4 +1,4 @@
-name: passerby-b_JDDJ
+name: shufflewzc_faker2
 on:
   schedule:
     - cron: ''
@@ -6,7 +6,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: sync passerby-b_JDDJ
+    types: sync shufflewzc_faker2
 jobs:
   repo-sync:
     env:
@@ -18,11 +18,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync passerby-b_JDDJ
+      - name: sync shufflewzc_faker2
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/passerby-b/JDDJ.git"
+          source_repo: "https://github.com/shufflewzc/faker2.git"
           source_branch: "main"
-          destination_branch: "passerby-b_JDDJ"
+          destination_branch: "shufflewzc_faker2"
           github_token: ${{ secrets.PAT }}
