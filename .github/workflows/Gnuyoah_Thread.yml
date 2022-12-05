@@ -1,12 +1,12 @@
-name: gys619_jdd
+name: Gnuyoah_Thread
 on:
   schedule:
-    - cron: '1 */3 * * *'
+    - cron: '1 */6 * * *'
   workflow_dispatch:
   watch:
     types: started
   repository_dispatch:
-    types: sync gys619_jdd
+    types: sync Gnuyoah_Thread
 jobs:
   repo-sync:
     env:
@@ -18,11 +18,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync gys619_jdd
+      - name: sync Gnuyoah_Thread
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/gys619/jdd.git"
+          source_repo: "https://github.com/Gnuyoah/Thread.git"
           source_branch: "main"
-          destination_branch: "gys619_jdd"
+          destination_branch: "Gnuyoah_Thread"
           github_token: ${{ secrets.PAT }}

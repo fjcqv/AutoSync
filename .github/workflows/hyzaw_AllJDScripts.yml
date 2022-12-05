@@ -1,12 +1,12 @@
-name: JDHelloWorld_jd_scripts
+name: hyzaw_AllJDScripts
 on:
   schedule:
-    - cron: '1 */3 * * *'
+    - cron: '1 */6 * * *'
   workflow_dispatch:
   watch:
     types: started
   repository_dispatch:
-    types: JDHelloWorld_jd_scripts
+    types: hyzaw_AllJDScripts
 jobs:
   repo-sync:
     env:
@@ -18,11 +18,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync JDHelloWorld_jd_scripts
+      - name: hyzaw_AllJDScripts
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/JDHelloWorld/jd_scripts.git"
-          source_branch: "main"
-          destination_branch: "JDHelloWorld_jd_scripts"
+          source_repo: "https://github.com/hyzaw/AllJDScripts.git"
+          source_branch: "master"
+          destination_branch: "hyzaw_AllJDScripts"
           github_token: ${{ secrets.PAT }}
